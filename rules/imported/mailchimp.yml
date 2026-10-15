@@ -1,0 +1,33 @@
+version: 1
+rules:
+- id: mazen160_mailchimp_mailchimp_api_key_dfb0492379
+  name: MailChimp API Key
+  provider: mailchimp
+  category: imported
+  severity: medium
+  confidence: 0.8
+  regex: '[0-9a-f]{32}-us[0-9]{1,2}'
+  secret_group: 0
+  redaction: keep_prefix_7_suffix_4
+  tags:
+  - imported
+  - mazen160
+  - mailchimp
+  allowlist:
+    paths:
+    - tests/
+    - docs/
+    - examples/
+    - fixtures/
+    values:
+    - example
+    - placeholder
+    - your_key_here
+    - test_key
+    - fake_secret
+  source:
+    origin: mazen160
+    license: CC-BY-4.0
+    reviewed: false
+    source_url: https://raw.githubusercontent.com/mazen160/secrets-patterns-db/master/db/rules-stable.yml
+    import_date: '2026-05-20'

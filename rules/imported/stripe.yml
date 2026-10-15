@@ -1,0 +1,157 @@
+version: 1
+rules:
+- id: mazen160_stripe_stripe_25a7c519fa
+  name: Stripe
+  provider: stripe
+  category: imported
+  severity: medium
+  confidence: 0.8
+  regex: '[rs]k_live_[a-zA-Z0-9]{20,30}'
+  secret_group: 0
+  redaction: keep_prefix_7_suffix_4
+  tags:
+  - imported
+  - mazen160
+  - stripe
+  allowlist:
+    paths:
+    - tests/
+    - docs/
+    - examples/
+    - fixtures/
+    values:
+    - example
+    - placeholder
+    - your_key_here
+    - test_key
+    - fake_secret
+  source:
+    origin: mazen160
+    license: CC-BY-4.0
+    reviewed: false
+    source_url: https://raw.githubusercontent.com/mazen160/secrets-patterns-db/master/db/rules-stable.yml
+    import_date: '2026-05-20'
+- id: mazen160_stripe_stripe_api_key_1_d83051b5ca
+  name: Stripe API Key - 1
+  provider: stripe
+  category: imported
+  severity: medium
+  confidence: 0.8
+  regex: sk_live_[0-9a-zA-Z]{24}
+  secret_group: 0
+  redaction: keep_prefix_7_suffix_4
+  tags:
+  - imported
+  - mazen160
+  - stripe
+  allowlist:
+    paths:
+    - tests/
+    - docs/
+    - examples/
+    - fixtures/
+    values:
+    - example
+    - placeholder
+    - your_key_here
+    - test_key
+    - fake_secret
+  source:
+    origin: mazen160
+    license: CC-BY-4.0
+    reviewed: false
+    source_url: https://raw.githubusercontent.com/mazen160/secrets-patterns-db/master/db/rules-stable.yml
+    import_date: '2026-05-20'
+- id: mazen160_stripe_stripe_secret_key_686c711e03
+  name: Stripe Secret Key
+  provider: stripe
+  category: imported
+  severity: medium
+  confidence: 0.8
+  regex: sk_(?:live|test)_[0-9a-zA-Z]{24}
+  secret_group: 0
+  redaction: keep_prefix_7_suffix_4
+  tags:
+  - imported
+  - mazen160
+  - stripe
+  allowlist:
+    paths:
+    - tests/
+    - docs/
+    - examples/
+    - fixtures/
+    values:
+    - example
+    - placeholder
+    - your_key_here
+    - test_key
+    - fake_secret
+  source:
+    origin: mazen160
+    license: CC-BY-4.0
+    reviewed: false
+    source_url: https://raw.githubusercontent.com/mazen160/secrets-patterns-db/master/db/rules-stable.yml
+    import_date: '2026-05-20'
+- id: mazen160_stripe_stripe_secret_live_key_21df5c0051
+  name: Stripe Secret Live Key
+  provider: stripe
+  category: imported
+  severity: medium
+  confidence: 0.8
+  regex: (sk|rk)_live_[0-9a-z]{24}
+  secret_group: 0
+  redaction: keep_prefix_7_suffix_4
+  tags:
+  - imported
+  - mazen160
+  - stripe
+  allowlist:
+    paths:
+    - tests/
+    - docs/
+    - examples/
+    - fixtures/
+    values:
+    - example
+    - placeholder
+    - your_key_here
+    - test_key
+    - fake_secret
+  source:
+    origin: mazen160
+    license: CC-BY-4.0
+    reviewed: false
+    source_url: https://raw.githubusercontent.com/mazen160/secrets-patterns-db/master/db/rules-stable.yml
+    import_date: '2026-05-20'
+- id: mazen160_stripe_stripe_standard_api_eef42042df
+  name: stripe_standard_api
+  provider: stripe
+  category: imported
+  severity: medium
+  confidence: 0.8
+  regex: (sk_live_[0-9a-zA-Z]{24,34})
+  secret_group: 0
+  redaction: keep_prefix_7_suffix_4
+  tags:
+  - imported
+  - mazen160
+  - stripe
+  allowlist:
+    paths:
+    - tests/
+    - docs/
+    - examples/
+    - fixtures/
+    values:
+    - example
+    - placeholder
+    - your_key_here
+    - test_key
+    - fake_secret
+  source:
+    origin: mazen160
+    license: CC-BY-4.0
+    reviewed: false
+    source_url: https://raw.githubusercontent.com/mazen160/secrets-patterns-db/master/db/rules-stable.yml
+    import_date: '2026-05-20'

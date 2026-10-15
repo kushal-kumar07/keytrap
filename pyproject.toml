@@ -1,0 +1,17 @@
+[project]
+name = "keytrap"
+version = "0.1.0"
+description = "KeyTrap"
+requires-python = ">=3.11"
+
+[project.scripts]
+keytrap = "keytrap.cli:app"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.coverage.run]
+source = ["keytrap"]
+[tool.setuptools.packages.find]
+include = ["keytrap*"]

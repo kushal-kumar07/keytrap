@@ -1,0 +1,172 @@
+version: 1
+rules:
+  - id: stripe_live_key
+    name: Stripe Live Secret Key
+    provider: stripe
+    category: payment
+    severity: high
+    confidence: high
+    regex: '\bsk_live_[A-Za-z0-9]{20,}\b'
+    secret_group: 0
+    redaction: keep_prefix_7_suffix_4
+    tags: [api-key, payment, live-looking]
+    allowlist:
+      paths: [tests/, docs/, examples/, fixtures/]
+      values: [sk_live_example, sk_live_xxxx, sk_live_your]
+    source:
+      origin: keytrap-core
+      license: internal
+      reviewed: true
+  - id: stripe_test_key
+    name: Stripe Test Secret Key
+    provider: stripe
+    category: payment
+    severity: medium
+    confidence: medium
+    regex: '\bsk_test_[A-Za-z0-9]{10,}\b'
+    secret_group: 0
+    redaction: keep_prefix_7_suffix_4
+    tags: [api-key, payment, test]
+    allowlist:
+      paths: [tests/, docs/, examples/, fixtures/]
+      values: [sk_test_example, sk_test_xxxx, sk_test_your]
+    source:
+      origin: keytrap-core
+      license: internal
+      reviewed: true
+  - id: aws_access_key_id
+    name: AWS Access Key ID
+    provider: aws
+    category: cloud
+    severity: high
+    confidence: high
+    regex: '\bAKIA[0-9A-Z]{12,}\b'
+    secret_group: 0
+    redaction: keep_prefix_7_suffix_4
+    tags: [api-key, cloud]
+    allowlist:
+      paths: [tests/, docs/, examples/, fixtures/]
+      values: [AKIAEXAMPLE, AKIATESTKEY]
+    source:
+      origin: keytrap-core
+      license: internal
+      reviewed: true
+  - id: aws_secret_access_key
+    name: AWS Secret Access Key
+    provider: aws
+    category: cloud
+    severity: high
+    confidence: high
+    regex: '(?i)\baws_secret(?:_access_key)?\b\s*[:=]\s*([0-9A-Za-z/+=]{30,})'
+    secret_group: 1
+    redaction: keep_prefix_7_suffix_4
+    tags: [api-key, cloud]
+    allowlist:
+      paths: [tests/, docs/, examples/, fixtures/]
+      values: [aws_secret_example, aws_secret_placeholder]
+    source:
+      origin: keytrap-core
+      license: internal
+      reviewed: true
+  - id: github_personal_token
+    name: GitHub Personal Access Token
+    provider: github
+    category: source-control
+    severity: high
+    confidence: high
+    regex: '\bghp_[A-Za-z0-9]{20,}\b'
+    secret_group: 0
+    redaction: keep_prefix_7_suffix_4
+    tags: [token, source-control]
+    allowlist:
+      paths: [tests/, docs/, examples/, fixtures/]
+      values: [ghp_example, ghp_placeholder]
+    source:
+      origin: keytrap-core
+      license: internal
+      reviewed: true
+  - id: github_oauth_token
+    name: GitHub OAuth Token
+    provider: github
+    category: source-control
+    severity: high
+    confidence: high
+    regex: '\bgho_[A-Za-z0-9]{20,}\b'
+    secret_group: 0
+    redaction: keep_prefix_7_suffix_4
+    tags: [token, source-control]
+    allowlist:
+      paths: [tests/, docs/, examples/, fixtures/]
+      values: [gho_example, gho_placeholder]
+    source:
+      origin: keytrap-core
+      license: internal
+      reviewed: true
+  - id: slack_bot_token
+    name: Slack Bot Token
+    provider: slack
+    category: messaging
+    severity: high
+    confidence: high
+    regex: '\bxoxb-[A-Za-z0-9-]{10,}\b'
+    secret_group: 0
+    redaction: keep_prefix_7_suffix_4
+    tags: [token, messaging]
+    allowlist:
+      paths: [tests/, docs/, examples/, fixtures/]
+      values: [xoxb-example, xoxb-placeholder]
+    source:
+      origin: keytrap-core
+      license: internal
+      reviewed: true
+  - id: gcp_service_account_key
+    name: GCP Service Account Key
+    provider: gcp
+    category: cloud
+    severity: high
+    confidence: medium
+    regex: '(?i)"type"\s*:\s*"service_account"'
+    secret_group: 0
+    redaction: keep_prefix_7_suffix_4
+    tags: [credential, cloud]
+    allowlist:
+      paths: [tests/, docs/, examples/, fixtures/]
+      values: [service_account_example, service_account_placeholder]
+    source:
+      origin: keytrap-core
+      license: internal
+      reviewed: true
+  - id: generic_api_key
+    name: Generic API Key
+    provider: unknown
+    category: generic
+    severity: medium
+    confidence: medium
+    regex: '(?i)\bapi_key\b\s*[:=]\s*([A-Za-z0-9]{16,})\b'
+    secret_group: 1
+    redaction: keep_prefix_7_suffix_4
+    tags: [api-key, generic]
+    allowlist:
+      paths: [tests/, docs/, examples/, fixtures/]
+      values: [api_key_example, api_key_placeholder]
+    source:
+      origin: keytrap-core
+      license: internal
+      reviewed: true
+  - id: private_key_pem
+    name: Private Key PEM
+    provider: unknown
+    category: credential
+    severity: critical
+    confidence: high
+    regex: '-----BEGIN (?:RSA |EC )?PRIVATE KEY-----'
+    secret_group: 0
+    redaction: keep_prefix_7_suffix_4
+    tags: [private-key, pem]
+    allowlist:
+      paths: [tests/, docs/, examples/, fixtures/]
+      values: [private_key_example, private_key_placeholder]
+    source:
+      origin: keytrap-core
+      license: internal
+      reviewed: true

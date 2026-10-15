@@ -1,0 +1,64 @@
+version: 1
+rules:
+- id: mazen160_facebook_facebook_access_token_006f9472d4
+  name: Facebook Access Token
+  provider: facebook
+  category: imported
+  severity: medium
+  confidence: 0.8
+  regex: EAACEdEose0cBA[0-9A-Za-z]+
+  secret_group: 0
+  redaction: keep_prefix_7_suffix_4
+  tags:
+  - imported
+  - mazen160
+  - facebook
+  allowlist:
+    paths:
+    - tests/
+    - docs/
+    - examples/
+    - fixtures/
+    values:
+    - example
+    - placeholder
+    - your_key_here
+    - test_key
+    - fake_secret
+  source:
+    origin: mazen160
+    license: CC-BY-4.0
+    reviewed: false
+    source_url: https://raw.githubusercontent.com/mazen160/secrets-patterns-db/master/db/rules-stable.yml
+    import_date: '2026-05-20'
+- id: mazen160_facebook_facebook_access_token_5708bf1a90
+  name: facebook_access_token
+  provider: facebook
+  category: imported
+  severity: medium
+  confidence: 0.8
+  regex: (EAACEdEose0cBA[0-9A-Za-z]+)
+  secret_group: 0
+  redaction: keep_prefix_7_suffix_4
+  tags:
+  - imported
+  - mazen160
+  - facebook
+  allowlist:
+    paths:
+    - tests/
+    - docs/
+    - examples/
+    - fixtures/
+    values:
+    - example
+    - placeholder
+    - your_key_here
+    - test_key
+    - fake_secret
+  source:
+    origin: mazen160
+    license: CC-BY-4.0
+    reviewed: false
+    source_url: https://raw.githubusercontent.com/mazen160/secrets-patterns-db/master/db/rules-stable.yml
+    import_date: '2026-05-20'

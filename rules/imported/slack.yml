@@ -1,0 +1,33 @@
+version: 1
+rules:
+- id: mazen160_slack_slack_28f01712c3
+  name: Slack
+  provider: slack
+  category: imported
+  severity: medium
+  confidence: 0.8
+  regex: xox[baprs]-[0-9a-zA-Z-]{10,72}
+  secret_group: 0
+  redaction: keep_prefix_7_suffix_4
+  tags:
+  - imported
+  - mazen160
+  - slack
+  allowlist:
+    paths:
+    - tests/
+    - docs/
+    - examples/
+    - fixtures/
+    values:
+    - example
+    - placeholder
+    - your_key_here
+    - test_key
+    - fake_secret
+  source:
+    origin: mazen160
+    license: CC-BY-4.0
+    reviewed: false
+    source_url: https://raw.githubusercontent.com/mazen160/secrets-patterns-db/master/db/rules-stable.yml
+    import_date: '2026-05-20'

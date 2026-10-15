@@ -1,0 +1,126 @@
+version: 1
+rules:
+- id: mazen160_aws_aws_1_ca2f49ce42
+  name: Aws - 1
+  provider: aws
+  category: imported
+  severity: medium
+  confidence: 0.8
+  regex: \b((?:AKIA|ABIA|ACCA|ASIA)[0-9A-Z]{16})\b
+  secret_group: 0
+  redaction: keep_prefix_7_suffix_4
+  tags:
+  - imported
+  - mazen160
+  - aws
+  allowlist:
+    paths:
+    - tests/
+    - docs/
+    - examples/
+    - fixtures/
+    values:
+    - example
+    - placeholder
+    - your_key_here
+    - test_key
+    - fake_secret
+  source:
+    origin: mazen160
+    license: CC-BY-4.0
+    reviewed: false
+    source_url: https://raw.githubusercontent.com/mazen160/secrets-patterns-db/master/db/rules-stable.yml
+    import_date: '2026-05-20'
+- id: mazen160_aws_aws_access_key_id_value_0749828b12
+  name: AWS Access Key ID Value
+  provider: aws
+  category: imported
+  severity: medium
+  confidence: 0.8
+  regex: (A3T[A-Z0-9]|AKIA|AGPA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
+  secret_group: 0
+  redaction: keep_prefix_7_suffix_4
+  tags:
+  - imported
+  - mazen160
+  - aws
+  allowlist:
+    paths:
+    - tests/
+    - docs/
+    - examples/
+    - fixtures/
+    values:
+    - example
+    - placeholder
+    - your_key_here
+    - test_key
+    - fake_secret
+  source:
+    origin: mazen160
+    license: CC-BY-4.0
+    reviewed: false
+    source_url: https://raw.githubusercontent.com/mazen160/secrets-patterns-db/master/db/rules-stable.yml
+    import_date: '2026-05-20'
+- id: mazen160_aws_aws_api_key_8d3ebf5cc4
+  name: AWS API Key
+  provider: aws
+  category: imported
+  severity: medium
+  confidence: 0.8
+  regex: AKIA[0-9A-Z]{16}
+  secret_group: 0
+  redaction: keep_prefix_7_suffix_4
+  tags:
+  - imported
+  - mazen160
+  - aws
+  allowlist:
+    paths:
+    - tests/
+    - docs/
+    - examples/
+    - fixtures/
+    values:
+    - example
+    - placeholder
+    - your_key_here
+    - test_key
+    - fake_secret
+  source:
+    origin: mazen160
+    license: CC-BY-4.0
+    reviewed: false
+    source_url: https://raw.githubusercontent.com/mazen160/secrets-patterns-db/master/db/rules-stable.yml
+    import_date: '2026-05-20'
+- id: mazen160_aws_aws_client_id_c2e69f1ada
+  name: AWS client ID
+  provider: aws
+  category: imported
+  severity: medium
+  confidence: 0.8
+  regex: (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
+  secret_group: 0
+  redaction: keep_prefix_7_suffix_4
+  tags:
+  - imported
+  - mazen160
+  - aws
+  allowlist:
+    paths:
+    - tests/
+    - docs/
+    - examples/
+    - fixtures/
+    values:
+    - example
+    - placeholder
+    - your_key_here
+    - test_key
+    - fake_secret
+  source:
+    origin: mazen160
+    license: CC-BY-4.0
+    reviewed: false
+    source_url: https://raw.githubusercontent.com/mazen160/secrets-patterns-db/master/db/rules-stable.yml
+    import_date: '2026-05-20'

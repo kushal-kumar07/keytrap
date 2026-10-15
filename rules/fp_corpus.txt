@@ -1,0 +1,12 @@
+example
+placeholder
+your_key_here
+xxxxxxxx
+12345678901234567890
+test_key
+fake_secret
+dummy_value
+sample_token
+changeme
+INSERT_YOUR_KEY_HERE
+YOUR_API_KEY_HERE
